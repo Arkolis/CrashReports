@@ -1,0 +1,158 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 7/26/20 9:55 AM
+Description: Unexpected error
+
+java.lang.IllegalStateException: null
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:429) ~[guava-21.0.jar:?] {}
+	at blusunrize.immersiveengineering.api.wires.LocalWireNetwork.unloadConnector(LocalWireNetwork.java:176) ~[?:?] {re:classloading}
+	at blusunrize.immersiveengineering.api.wires.GlobalWireNetwork.onConnectorUnload(GlobalWireNetwork.java:339) ~[?:?] {re:classloading}
+	at blusunrize.immersiveengineering.api.wires.ImmersiveConnectableTileEntity.onChunkUnloaded(ImmersiveConnectableTileEntity.java:158) ~[?:?] {re:classloading}
+	at net.minecraft.world.World.lambda$tickBlockEntities$5(World.java:514) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.World$$Lambda$8753/2058253781.accept(Unknown Source) ~[?:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:1.8.0_51] {}
+	at java.util.Collections$SetFromMap.forEach(Collections.java:5476) ~[?:1.8.0_51] {}
+	at net.minecraft.world.World.func_217391_K(World.java:514) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.world.ClientWorld.func_217419_d(ClientWorld.java:228) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1457) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.func_195542_b(Minecraft.java:928) [?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:582) [?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:184) [?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_51] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_51] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_51] {}
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_51] {}
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider.lambda$launchService$0(FMLClientLaunchProvider.java:51) [forge-1.16.1-32.0.75.jar:32.0] {}
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider$$Lambda$434/1594065480.call(Unknown Source) [forge-1.16.1-32.0.75.jar:32.0] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-5.1.0.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-5.1.0.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-5.1.0.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-5.1.0.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-5.1.0.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:429)
+	at blusunrize.immersiveengineering.api.wires.LocalWireNetwork.unloadConnector(LocalWireNetwork.java:176)
+	at blusunrize.immersiveengineering.api.wires.GlobalWireNetwork.onConnectorUnload(GlobalWireNetwork.java:339)
+	at blusunrize.immersiveengineering.api.wires.ImmersiveConnectableTileEntity.onChunkUnloaded(ImmersiveConnectableTileEntity.java:158)
+	at net.minecraft.world.World.lambda$tickBlockEntities$5(World.java:514)
+	at net.minecraft.world.World$$Lambda$8753/2058253781.accept(Unknown Source)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at java.util.Collections$SetFromMap.forEach(Collections.java:5476)
+	at net.minecraft.world.World.func_217391_K(World.java:514)
+	at net.minecraft.client.world.ClientWorld.func_217419_d(ClientWorld.java:228)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['Arkolis'/231, l='ClientLevel', x=177.61, y=62.94, z=191.65]]
+	Chunk stats: Client Chunk Cache: 729, 483
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (176,66,176), Chunk: (at 0,4,0 in 11,11; contains blocks 176,0,176 to 191,255,191), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 2856675 game time, 3032593 day time
+	Server brand: forge
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.func_72914_a(ClientWorld.java:616)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:1973)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:603)
+	at net.minecraft.client.main.Main.main(Main.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider.lambda$launchService$0(FMLClientLaunchProvider.java:51)
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider$$Lambda$434/1594065480.call(Unknown Source)
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72)
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81)
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.1
+	Minecraft Version ID: 1.16.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 7439993432 bytes (7095 MB) / 10737418240 bytes (10240 MB) up to 10737418240 bytes (10240 MB)
+	CPUs: 8
+	JVM Flags: 9 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xss1M -Xmx10G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	ModLauncher: 5.1.0+69+master.79f13f7
+	ModLauncher launch target: fmlclient
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/mixin-0.8.jar mixin PLUGINSERVICE 
+		/eventbus-2.2.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.16.1-32.0.75.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.1-32.0.75.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.1.3-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.1-32.0.75.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.1-32.0.75.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.jar mixin TRANSFORMATIONSERVICE 
+		/preview_OptiFine_1.16.1_HD_U_G2_pre9.jar OptiFine TRANSFORMATIONSERVICE 
+		/forge-1.16.1-32.0.75.jar fml TRANSFORMATIONSERVICE 
+	FML: 32.0
+	Forge: net.minecraftforge:32.0.75
+	FML Language Providers: 
+		javafml@32.0
+		minecraft@1
+	Mod List: 
+		forge-1.16.1-32.0.75-client.jar Minecraft {minecraft@1.16.1 DONE}
+		luckyblock-1.16.1-1.jar Lucky Block {lucky@1.16.1-1 DONE}
+		QuarkOddities-1.15.2.jar Quark Oddities {quarkoddities@1.15.2 DONE}
+		MouseTweaks-2.13-mc1.16.1.jar Mouse Tweaks {mousetweaks@2.13 DONE}
+		Ma-Enchants-1.16.1-3.2.1.jar Ma Enchants {ma-enchants@1.16.1-3.2.1 DONE}
+		ImmersiveEngineering-0.16-109.jar Immersive Engineering {immersiveengineering@0.16-109 DONE}
+		MekanismAdditions-1.16.1-10.0.3.426.jar Mekanism: Additions {mekanismadditions@10.0.3 DONE}
+		HappyTrails-1.16.1-1.0.0.3.jar Happy Trails Mod {ht@1.0.0.3 DONE}
+		jei-1.16.1-7.0.0.6.jar Just Enough Items {jei@7.0.0.6 DONE}
+		Mekanism-1.16.1-10.0.3.426.jar Mekanism {mekanism@10.0.3 DONE}
+		Craftable+Saddles+[1.16.1]-1.3.jar Craftable Saddles {craftable_saddles@1.3 DONE}
+		Extra-Boats-1.16.1-1.4.0.jar Extra Boats {extraboats@1.4.0 DONE}
+		Waystones_1.16.1-7.0.2.jar Waystones {waystones@7.0.2 DONE}
+		AutoRegLib-1.6-42.jar AutoRegLib {autoreglib@1.6-42 DONE}
+		doublebladedaxemod-1.2.1-1.16.1.jar Double Bladed Axe Mod {doublebladedaxemod@1.1.0 DONE}
+		gemsnjewels-1.16.1-0.7.2.jar Gems & Jewels {gemsnjewels@0.7.0 DONE}
+		culinaryconstruct-FORGE-1.16.1-3.0.jar Culinary Construct {culinaryconstruct@FORGE-1.16.1-3.0 DONE}
+		Bookshelf-1.16.1-6.1.11.jar Bookshelf {bookshelf@6.1.11 DONE}
+		BotanyPots-1.16.1-3.0.4.jar BotanyPots {botanypots@3.0.4 DONE}
+		MekanismTools-1.16.1-10.0.3.426.jar Mekanism: Tools {mekanismtools@10.0.3 DONE}
+		simpleplanes-1.16.1-2.0.5.0.jar Simple Planes {simpleplanes@2.0.4.1 DONE}
+		engineersdecor-1.16.1-1.1.1-b3.jar Engineer's Decor {engineersdecor@1.1.1-b3 DONE}
+		additional_lights-1.16.1-2.1.0.jar Additional Lights {additional_lights@1.16.1-2.1.0 DONE}
+		MekanismGenerators-1.16.1-10.0.3.426.jar Mekanism: Generators {mekanismgenerators@10.0.3 DONE}
+		forge-1.16.1-32.0.75-universal.jar Forge {forge@32.0.75 DONE}
+		Quark-r2.2-255.jar Quark {quark@r2.2-255 DONE}
+		Incubation-1.16.1-1.1.0.jar Incubation {incubation@1.1.0 DONE}
+		lumberjack-2.1.2.jar LumberJack {lumberjack@2.1.2 DONE}
+		corpse-1.16.1-1.0.7.jar Corpse {corpse@1.16.1-1.0.7 DONE}
+	Launched Version: 1.16.1-forge-32.0.75
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: GeForce GTX 1660 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 445.75, NVIDIA Corporation
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Resource Packs: vanilla, mod_resources, quark:emote_resources (incompatible), file/Unity-1.16.X-Dark-0.6.2.zip
+	Current Language: English (US)
+	CPU: 8x Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+	OptiFine Version: OptiFine_1.16.1_HD_U_G2_pre9
+	OptiFine Build: 20200723-184847
+	Render Distance Chunks: 16
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: BSL_v7.1.05p3.zip
+	OpenGlVersion: 4.6.0 NVIDIA 445.75
+	OpenGlRenderer: GeForce GTX 1660 Ti/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 8
